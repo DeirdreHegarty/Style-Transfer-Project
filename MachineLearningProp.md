@@ -102,7 +102,7 @@ To be stumbled upon.
 ### STATEMENT
 
 *We will keep all our source code in git and commit and push often and arrange
-for Barack to have access to the repository.*
+for Barak to have access to the repository.*
 
 ---
 
