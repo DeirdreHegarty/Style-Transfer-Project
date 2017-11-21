@@ -26,7 +26,7 @@ Our proposed project hopes to achieve style transfer between one image and anoth
 The application needs 2 images - one content image and one style image. The
 application will produce a mixed image where the contour lines are taken from
 the content image and the textures and colour from the style image. These are
-then mixed together to create an new image.
+then mixed together to create a new image.
 
 
 ---
@@ -56,14 +56,14 @@ activated together. Create style loss functions that will minimize the
 difference between the gram matrix for multiple layers when inputing the style
 and mixed images.
 
-Need a pre trained neural network VGG-16 model and python. Using Tensorflow.
+
 
 ---
 
 ### MATERIALS
 
 One team member will build a web scraper using Python. This web scraper will be
-used to obtain a database of style images.  
+used to obtain a database of style images. Need a pre trained neural network VGG-16 model and python using Tensorflow. 
 
 
 ---
@@ -72,7 +72,7 @@ used to obtain a database of style images.
 
 Hopefully by the end of this project we will have produced an application that
 provides opportunities for users to stylize images in accordance with a
-specific painting/image.
+specific painting/image. We aim to provide the best quality output image possible with our limited processing power and hope the style transfers are clearly recognsiable to the user.
 
 At the very least our team will have learned skills including managing data,
 working with a neural network, dealing with Tensorflow, and learning python.
@@ -82,8 +82,8 @@ working with a neural network, dealing with Tensorflow, and learning python.
 
 ### RISK ASSESSMENT
 
-Because we will processing a lot of images there may be issues with hardware
-performance (fast GPU - take long time on CPU).
+Because we will be processing a lot of images there may be issues with hardware
+performance (fast GPU - take long time on CPU), this may also reduce the quality of the output image.
 
 In order to achieve the optimal output image there will need to a high amount
 of iterations. This process will take a lot of time and management. High
