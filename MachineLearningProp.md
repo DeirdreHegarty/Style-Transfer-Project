@@ -21,7 +21,8 @@ To be decided.
 
 ### INTRODUCTION
 
-Our proposed project hopes to achieve style transfer between one image and another. 
+Our proposed project hopes to achieve style transfer between one image and
+another. 
 
 The application needs 2 images - one content image and one style image. The
 application will produce a mixed image where the contour lines are taken from
@@ -47,8 +48,9 @@ the difference between the activation features from the content image and from
 the mixed image. Calculate features of that layer & the mean squared error =
 the loss function for the content layer. We will want to minimize this error so
 features activations in this layer are similar to that of the content image and
-the mixed image.  The feature activations from the content image will be cached because
-it will be the same each time we calculate them (reduce computation time).
+the mixed image.  The feature activations from the content image will be cached
+because it will be the same each time we calculate them (reduce computation
+time).
 
 Similar idea for the style layers, but calculate a gram matrix because we want
 similarity between style image and the mixed image regarding features that are
@@ -63,7 +65,8 @@ and mixed images.
 ### MATERIALS
 
 One team member will build a web scraper using Python. This web scraper will be
-used to obtain a database of style images. Need a pre trained neural network VGG-16 model and python using Tensorflow. 
+used to obtain a database of style images. Need a pre trained neural network
+VGG-16 model and python using Tensorflow. 
 
 
 ---
@@ -72,7 +75,9 @@ used to obtain a database of style images. Need a pre trained neural network VGG
 
 Hopefully by the end of this project we will have produced an application that
 provides opportunities for users to stylize images in accordance with a
-specific painting/image. We aim to provide the best quality output image possible with our limited processing power and hope the style transfers are clearly recognsiable to the user.
+specific painting/image. We aim to provide the best quality output image
+possible with our limited processing power and hope the style transfers are
+clearly recognsiable to the user.
 
 At the very least our team will have learned skills including managing data,
 working with a neural network, dealing with Tensorflow, and learning python.
@@ -83,7 +88,8 @@ working with a neural network, dealing with Tensorflow, and learning python.
 ### RISK ASSESSMENT
 
 Because we will be processing a lot of images there may be issues with hardware
-performance (fast GPU - take long time on CPU), this may also reduce the quality of the output image.
+performance (fast GPU - take long time on CPU), this may also reduce the
+quality of the output image.
 
 In order to achieve the optimal output image there will need to a high amount
 of iterations. This process will take a lot of time and management. High
