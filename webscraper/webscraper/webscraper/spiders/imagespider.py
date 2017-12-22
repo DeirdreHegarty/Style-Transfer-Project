@@ -6,15 +6,37 @@
 
 
 import scrapy
-from scrapy.pipelines.images import ImagesPipeline
-from scrapy.exceptions import DropItem
  
 class imagespider(scrapy.Spider):
 	name = "pyimagesearch-spider"
 	#list of allowed domains
-	allowed_domains = ['www.vangoghmuseum.nl/en/search/collection']
+	allowed_domains = ['www.vincent-van-gogh-gallery.org']
 	#starting url
-	start_urls = ['https://www.vangoghmuseum.nl/en/search/collection?q=&pagesize=10']
+	start_urls = ['https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96', 
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=2", 
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=3",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=4",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=5",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=6",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=7",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=8",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=9",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=10",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=11",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=12",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=13",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=14",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=15",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=16",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=17",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=18",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=19",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=20",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=21",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=22",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=23",
+	"https://www.vincent-van-gogh-gallery.org/the-complete-works.html?ps=96&pageno=24"]
+
 	#location of csv file
 	custom_settings = {
 		'FEED_URI' : 'tmp/scraped-images.csv'
@@ -22,26 +44,20 @@ class imagespider(scrapy.Spider):
 
 	def parse(self, response):
 
-		getimages = response.css(".link-teaser::attr(href)").extract()
-		string = "https://www.vangoghmuseum.nl"
+		getimages = response.css("img::attr(src)").extract()
+		string = "https://www.vincent-van-gogh-gallery.org"
 		images = [string + x for x in getimages]
 
-
-
-		# title = response.css(".text-base::text").extract()
-		# new_title = [str(x).strip()[:x.index(',')].strip('\n') for x in title]
-
-
-		artist = response.css(".col p::text").extract()
+		# artist = "Vincent Van Gogh"
+		title = response.css(".tile a::text").extract()
 
 
 
-		for item in zip(images, images, artist):
+		for item in zip(images, title):
 			scraped_info = {
-				'images': [item[0]],
-				'image_urls': [item[1]],
-				'artist': [item[2]] #Set's the url for scrapy to download images
-				# 'title'	: [item[1]],
+				'image_urls': [item[0]],
+				# 'artist': [item[1]],
+				'title'	: [item[1]]
 				
 			}
 			yield scraped_info

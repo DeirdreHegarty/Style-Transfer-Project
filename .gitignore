@@ -1,3 +1,5 @@
 *.DS_Store
 *.doc
 *.docx
+*.pyc
+webscraper/webscraper/webscraper/tmp/images/
