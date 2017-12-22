@@ -36,14 +36,14 @@ scrapy shell
 fetch("https://www.reddit.com/r/gameofthrones/")
 print response.text
 
-# extract first element with class = "score unvoted"
-response.css(".score.unvoted").extract_first()
+* extract first element with class = "score unvoted"
+  * response.css(".score.unvoted").extract_first()
 
-# extract image urls
-response.css("img::attr(data-img)").extract()
+* extract image urls
+  * response.css("img::attr(data-img)").extract()
 
-# extract the title in the img tag
-response.css("img::attr(title)").extract()
+* extract the title in the img tag
+  * response.css("img::attr(title)").extract()
 
 ---
 
