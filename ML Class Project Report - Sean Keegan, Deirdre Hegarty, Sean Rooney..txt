@@ -1,0 +1,13 @@
+Class Project Report: Style Transfer
+Sean Keegan,
+Deirdre Hegarty,
+Sean Rooney.
+
+GitHub repo: https://github.com/DeirdreHegarty/Style-Transfer-Project
+
+The code used for this project is available at the above GitHub repo, it has been commented to explain the purpose of each section.
+
+We elected to use PyTorch instead of TensorFlow as we felt PyTorch offered better online resources more suited to our chosen project.
+
+Outcome: Successful however there were a number of obstacles which had to be addressed. The biggest issue was that we did not have access to a GPU to perform the calculations on. The program we ended up with was understandably very taxing on the CPU and as a result, depending how many runs or epochs we chose to execute, the program could take up to 40 minutes to produce one picture. Given the opportunity to move this project further, we would like to run it on more powerful hardware.
+
